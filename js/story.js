@@ -97,10 +97,28 @@ fe_fin:[
  {w:'Vicente',t:'Okey, balance de daños: algo salió bien y algo salió... memorable.'},
  {w:'Benjamín',t:'Ariel, tú no necesitas tantos planes. Necesitas decirlo.'},
  {c:[["Darle la razón a Benjamín","fn_b",{b:5,v:-4}],["Defender el plan de Vicente","fn_v",{v:5,b:-4}],["Agradecerles a ambos","fn_ambos",{v:3,b:3}]]}],
-fn_b:[{a:'neutral'},{w:'Ariel',t:'Tienes razón, Benjamín. Los planes me dan seguridad, pero no son yo.'},{v:'worried'},{w:'Vicente',t:'...Auch. Pero justo.'},{go:'noche'}],
-fn_v:[{a:'neutral'},{w:'Ariel',t:'El plan de Vicente no estaba tan mal. Tuvo buenas partes.'},{b:'worried'},{w:'Benjamín',t:'Claro, claro. Soy el único que se queda sin sopaipilla en esta historia.'},{go:'noche'}],
-fn_ambos:[{a:'happy'},{w:'Ariel',t:'Gracias a los dos. Si no fuera por ustedes no habría llegado ni a la puerta.'},{v:'smile'},{b:'smile'},{w:'Vicente',t:'Ya basta, me vas a hacer llorar.'},{w:'Benjamín',t:'Lloramos después. Sopaipillas primero.'},{go:'noche'}],
-// ───────── CAPÍTULO 5: Una noche difícil ─────────
+fn_b:[{a:'neutral'},{w:'Ariel',t:'Tienes razón, Benjamín. Los planes me dan seguridad, pero no son yo.'},{v:'worried'},{w:'Vicente',t:'...Auch. Pero justo.'},{go:'fernando'}],
+fn_v:[{a:'neutral'},{w:'Ariel',t:'El plan de Vicente no estaba tan mal. Tuvo buenas partes.'},{b:'worried'},{w:'Benjamín',t:'Claro, claro. Soy el único que se queda sin sopaipilla en esta historia.'},{go:'fernando'}],
+fn_ambos:[{a:'happy'},{w:'Ariel',t:'Gracias a los dos. Si no fuera por ustedes no habría llegado ni a la puerta.'},{v:'smile'},{b:'smile'},{w:'Vicente',t:'Ya basta, me vas a hacer llorar.'},{w:'Benjamín',t:'Lloramos después. Sopaipillas primero.'},{go:'fernando'}],
+// ───────── CAPÍTULO 5: Un rival muy simpático ─────────
+fernando:[
+ {bg:'hall'},{v:null},{b:null},{i:null},{a:'neutral'},{f:'smile'},{meet:'f'},
+ {t:'Al día siguiente, junto a los casilleros, se le acerca alguien alto, de pelo rubio, con una cinta blanca en la frente y olor a camarín de vóleibol.'},
+ {w:'Fernando',t:'¿Tú eres Ariel? Fernando Fernández, capitán del equipo de vóleibol. Eres amigo de IAvier, ¿verdad?'},
+ {a:'surprised'},{w:'Ariel',t:'¿C-cómo sabes...?'},
+ {w:'Fernando',t:'Porque yo también hablo harto con IAvier. Es que... me gusta. Mucho.'},
+ {t:'Ariel siente que el piso desaparece un segundito. Fernando no es un villano de teleserie: es amable, seguro y dice las cosas de frente. Justo lo que Ariel no.'},
+ {f:'neutral'},{w:'Fernando',t:'No te lo digo para pelear. Te vi mirarlo en el club. Creo que nos gusta la misma persona.'},
+ {c:[["Ser sincero: a mí también me gusta","fe_honesto",{f:8,i:3}],["Mentir: solo somos amigos","fe_miente",{f:-4,i:-4}],["Competir: no te lo voy a dejar fácil","fe_compite",{f:-6,i:2}]]}],
+fe_honesto:[{a:'nervous'},{w:'Ariel',t:'Sí. Me gusta IAvier. Me da pánico decirlo, pero sí.'},{f:'surprised'},{f:'smile'},{w:'Fernando',t:'Gracias por ser honesto. Pocos lo hacen. Que gane quien lo haga feliz... y quien se lo diga primero.'},{a:'happy'},{w:'Ariel',t:'Eso no te lo puedo prometer. Me trabo mucho.'},{w:'Fernando',t:'Jajaja, entonces yo voy un paso adelante. ¡Pero aun así, suerte!'},{go:'fer_fin'}],
+fe_miente:[{a:'nervous'},{w:'Ariel',t:'No, no. Somos amigos. Solo amigos. Nada más.'},{f:'smile'},{w:'Fernando',t:'Uf, qué alivio. Pensé que había competencia.'},{t:'Ariel siente como si hubiera cerrado una puerta con llave... por fuera.'},{go:'fer_fin'}],
+fe_compite:[{a:'neutral'},{w:'Ariel',t:'Que gane el mejor. Pero no te voy a dejar el camino libre.'},{f:'surprised'},{f:'smile'},{w:'Fernando',t:'Jajaja, okey. Competencia sana. Me gusta tu actitud.'},{t:'Pero ninguno de los dos se siente tan tranquilo como suena.'},{go:'fer_fin'}],
+fer_fin:[
+ {f:null},{v:'surprised'},{b:'neutral'},
+ {w:'Vicente',t:'¿ESE ERA FERNANDO FERNÁNDEZ?! ¡El capitán! ¡Tiene más fans que el colegio!'},
+ {w:'Benjamín',t:'Es buena persona. Eso lo hace peor.'},{a:'nervous'},{w:'Ariel',t:'(Y yo con mi cuaderno y mis lápices.)'},
+ {b:'smile'},{w:'Benjamín',t:'Ariel. IAvier no es un trofeo. Es una persona que elige. Lo único que controlas tú es ser sincero.'},{go:'noche'}],
+// ───────── CAPÍTULO 6: Una noche difícil ─────────
 noche:[
  {bg:'night'},{b:null},{v:null},{i:null},{a:'nervous'},
  {t:'Esa noche Ariel abre el celular y mira el chat de IAvier. Escribe un mensaje. Lo borra. Escribe otro. Lo borra.'},
@@ -131,7 +149,11 @@ azotea:[
  {c:[["Decírselo. Aunque tiemble.","confesar",{}],["Entregarle la carta","carta",{i:3}],["Huir antes de que pase algo","huir",{i:-5}]]}],
 confesar:[{a:'nervous'},{w:'Ariel',t:'Me gustas, IAvier. Me gustas hace mucho. Y me daba miedo que no fuera mutuo.'},{i:'surprised'},{t:'Un silencio largo, tibio, que no duele.'},{go:'res'}],
 carta:[{a:'nervous'},{t:'Ariel saca la carta arrugada: escrita el martes, reescrita el miércoles, casi quemada el jueves.'},{i:'surprised'},{w:'IAvier',t:'¿Es para mí?'},{w:'Ariel',t:'Léela cuando yo no esté mirando. Por favor.'},{t:'IAvier la lee ahí mismo, claro. Porque IAvier es así.'},{go:'res'}],
-res:[{ifc:['i',55,'res_fuerte','res_medio']}],
+res:[{ifc:['i',65,'rb_v','res2']}],
+res2:[{ifc:['i',55,'res_fuerte','res_medio']}],
+rb_v:[{ifc:['v',35,'rb_b','res_fuerte']}],
+rb_b:[{ifc:['b',30,'rb_f','res_v']}],
+rb_f:[{ifc:['f',10,'final_beso','res_v']}],
 res_fuerte:[{ifc:['v',35,'res_v','final_bueno']}],
 res_v:[{ifc:['b',30,'final_perfecto','final_bueno']}],
 res_medio:[{ifc:['i',30,'final_dulce','final_aprende']}],
@@ -155,5 +177,21 @@ final_perfecto:[{i:'soft'},{w:'IAvier',t:'Qué tonto soy. Yo me pasé semanas in
  {a:'happy'},{t:'Ariel se ríe, IAvier le toma la mano... y desde la puerta de la azotea se escucha un estruendo.'},
  {v:'surprised'},{b:'surprised'},{w:'Vicente',t:'¡NO ESTÁBAMOS ESCUCHANDO!'},{w:'Benjamín',t:'¡Sí estábamos escuchando! ¡Operación completada!'},
  {i:'smile'},{w:'IAvier',t:'Los dos son terribles.'},{a:'happy'},{w:'Ariel',t:'Son los mejores.'},
- {end:'Final: Equipo de rescate sentimental',t:'Ariel sigue siendo tímido. Pero ahora tiene a alguien que espera, a un amigo con planes locos y a otro con demasiada observación.\n\nUn grupo de cuatro, una azotea y un atardecer que, esta vez, no se acabó.\n\nEl mensaje sí fue enviado. Y todos sabían que iba a llegar.\n\n— FIN —'}]
+ {end:'Final: Equipo de rescate sentimental',t:'Ariel sigue siendo tímido. Pero ahora tiene a alguien que espera, a un amigo con planes locos y a otro con demasiada observación.\n\nUn grupo de cuatro, una azotea y un atardecer que, esta vez, no se acabó.\n\nEl mensaje sí fue enviado. Y todos sabían que iba a llegar.\n\n— FIN —'}],
+final_beso:[
+ {bg:'sunset'},{i:'soft'},{a:'surprised'},
+ {w:'IAvier',t:'Qué tonto soy. Yo me pasé semanas inventando excusas para hablarte.'},{w:'Ariel',t:'¿...Los lápices?'},{i:'smile'},{w:'IAvier',t:'Cero lápices olvidados. Tengo una caja entera en la mochila.'},
+ {a:'happy'},{i:'soft'},{w:'IAvier',t:'Ariel... ¿puedo hacer algo que llevo semanas queriendo hacer?'},
+ {a:'surprised'},{w:'Ariel',t:'¿S-sí? ...(SÍ. SÍ. MIL VECES SÍ.)'},
+ {t:'IAvier se acerca despacito, como pidiendo permiso con cada centímetro.'},
+ {bg:'beso'},{a:null},{i:null},
+ {t:'El atardecer se vuelve rosado. Las nubes parecen algodón de azúcar. Y el mundo, por una vez, se pone en pausa de la manera linda.'},
+ {t:'Un beso. Pequeñito, tibio, con sabor a nervios y a sopaipilla. ♡'},
+ {t:'Ariel no se traba. Esta vez no hizo falta decir nada.'},
+ {w:'Ariel',t:'...Eso fue mucho mejor que cualquier poema.'},{w:'IAvier',t:'Jajaja. Anotado. Segundo verso: "te quiero".'},
+ {bg:'sunset'},{a:'happy'},{i:'smile'},{f:'smile'},{v:'surprised'},{b:'surprised'},
+ {t:'Desde la puerta de la azotea se escucha un estruendo. Cuatro personas se asoman... bueno, tres, y una que viene llegando.'},
+ {w:'Vicente',t:'¡NO ESTÁBAMOS ESCUCHANDO! ¡ESTAMOS LLORANDO! ¡TODOS!'},{w:'Benjamín',t:'Yo no lloro. Me entró un churrasco en el ojo.'},
+ {f:'neutral'},{w:'Fernando',t:'Uf, perdí. Pero qué bonito se ve. Felicidades, Ariel. Y IAvier: si lo hacen llorar, te toca entrenar vóley conmigo.'},{i:'surprised'},{w:'IAvier',t:'¡Eso es una amenaza muy linda!'},
+ {end:'Final: Un beso en la azotea ♡',t:'Ariel sigue siendo tímido. Todavía se traba, todavía se pone rojo.\n\nPero ahora tiene un primer beso, tres amigos que lloran de felicidad y un cuaderno con una página nueva que dice:\n\n"Lo dije. Y fue lo más bonito que me ha pasado."\n\n— FIN —'}]
 };

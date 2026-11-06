@@ -1,10 +1,10 @@
 const $=s=>document.querySelector(s);
-const SAVE='cosas_que_no_te_dije_v2';
-const CH={a:['ariel','Ariel'],v:['vicente','Vicente'],b:['benjamin','Benjamín'],i:['iavier','IAvier']};
-const WHO={Ariel:'a',Vicente:'v','Benjamín':'b',IAvier:'i'};
-const BARS={i:'IAvier ♥',v:'Vicente',b:'Benjamín'};
+const SAVE='cosas_que_no_te_dije_v3';
+const CH={a:['ariel','Ariel'],v:['vicente','Vicente'],b:['benjamin','Benjamín'],i:['iavier','IAvier'],f:['fernando','Fernando']};
+const WHO={Ariel:'a',Vicente:'v','Benjamín':'b',IAvier:'i',Fernando:'f'};
+const BARS={i:'IAvier ♥',v:'Vicente',b:'Benjamín',f:'Fernando'};
 let st,typing=null,full='',busy=false,waiting=false;
-const fresh=()=>({label:'start',idx:0,fx:null,bg:'black',conn:{i:10,v:30,b:0},met:{i:0,v:0,b:0},sp:{a:null,v:null,b:null,i:null}});
+const fresh=()=>({label:'start',idx:0,fx:null,bg:'black',conn:{i:10,v:30,b:0,f:0},met:{i:0,v:0,b:0,f:0},sp:{a:null,v:null,b:null,i:null,f:null}});
 function save(){try{localStorage.setItem(SAVE,JSON.stringify(st))}catch(e){}}
 function load(){try{return JSON.parse(localStorage.getItem(SAVE))}catch(e){return null}}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.add('hidden'));$(id).classList.remove('hidden')}
@@ -27,7 +27,7 @@ function advance(){
   if(busy)return;waiting=false;
   while(true){
     const n=STORY[st.label][st.idx++];if(!n)return;
-    let h=false;for(const k of ['a','v','b','i'])if(k in n){setSp(k,n[k]);h=true}
+    let h=false;for(const k of ['a','v','b','i','f'])if(k in n){setSp(k,n[k]);h=true}
     if(h)continue;
     if(n.bg){setBg(n.bg);continue}
     if(n.meet){st.met[n.meet]=1;renderHud();continue}
@@ -47,7 +47,7 @@ function poem(){busy=true;const p=$('#poem');p.classList.remove('hidden');const 
     words.forEach(x=>{const b=document.createElement('button');b.textContent=x[0];b.disabled=picked.includes(x);
       b.onclick=()=>{picked.push(x);if(picked.length===4){p.classList.add('hidden');busy=false;bump({i:picked.reduce((s,y)=>s+y[1],0)*3});advance()}else render()};p.querySelector('.words').appendChild(b)})})()}
 function ending(n){clearInterval(typing);$('#end-t').textContent=n.end;
-  $('#end-d').textContent=n.t+`\n\nConexión final → IAvier ${st.conn.i}% · Vicente ${st.conn.v}% · Benjamín ${st.conn.b}%`;show('#end');try{localStorage.removeItem(SAVE)}catch(e){}}
+  $('#end-d').textContent=n.t+`\n\nConexión final → IAvier ${st.conn.i}% · Vicente ${st.conn.v}% · Benjamín ${st.conn.b}% · Fernando ${st.conn.f}%`;show('#end');try{localStorage.removeItem(SAVE)}catch(e){}}
 function start(from){show('#stage');$('#choices').innerHTML='';$('#poem').classList.add('hidden');busy=false;
   st=from?Object.assign(fresh(),from,{idx:Math.max(0,from.idx-1),fx:null}):fresh();
   buildHud();setBg(st.bg);for(const k in CH)setSp(k,st.sp[k]);advance()}

@@ -42,3 +42,4 @@ button:hover,button:focus-visible{background:#ffd0ea;color:#a01660;text-shadow:n
 .bar .d.neg{color:#4a4a8a}.bar .d.pos{color:#e0115f}
 @keyframes up{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-14px)}}
 #b-menu{top:2.5%}
+.sf{left:41%}
