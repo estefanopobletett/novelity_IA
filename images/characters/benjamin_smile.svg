@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 520">
+<ellipse cx="150" cy="170" rx="90" ry="100" fill="#7a2e2e"/>
+<path d="M30 520 Q40 360 150 345 Q260 360 270 520Z" fill="#c0392b"/>
+<rect x="128" y="300" width="44" height="55" fill="#ffe0cc"/>
+<ellipse cx="150" cy="205" rx="72" ry="86" fill="#ffe0cc"/>
+<path d="M76 200 Q80 100 150 100 Q222 100 224 200 Q196 138 150 150 Q104 138 76 200Z" fill="#7a2e2e"/>
+<ellipse cx="105" cy="244" rx="16" ry="9" fill="#ff7b9c" opacity="0.5"/><ellipse cx="195" cy="244" rx="16" ry="9" fill="#ff7b9c" opacity="0.5"/><path d="M108 220 Q120 202 132 220" stroke="#3a2a3a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M168 220 Q180 202 192 220" stroke="#3a2a3a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M128 255 Q150 285 172 255 Z" fill="#c2455f" stroke="#3a2a3a" stroke-width="3" stroke-linejoin="round"/><g fill="#c98a6a"><circle cx="100" cy="238" r="2.5"/><circle cx="110" cy="244" r="2.5"/><circle cx="198" cy="238" r="2.5"/><circle cx="190" cy="244" r="2.5"/></g><path d="M105 340 Q150 375 195 340 L200 372 Q150 400 100 372Z" fill="#8e2b21"/></svg>

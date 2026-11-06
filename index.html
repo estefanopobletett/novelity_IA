@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cosas que no te dije</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div id="game">
+  <div id="menu" class="screen">
+    <div class="menu-title"><h1>Cosas que<br>no te dije</h1><p>una novela visual sobre decir lo que sientes</p></div>
+    <nav><button id="b-new">Nueva partida</button><button id="b-cont">Continuar</button><button id="b-about">Acerca de</button></nav>
+    <img class="menu-girl" src="images/characters/ariel_nervous.svg" alt=""><img class="menu-boy" src="images/characters/iavier_smile.svg" alt="">
+  </div>
+  <div id="stage" class="screen hidden">
+    <div id="bg"></div>
+    <div id="hud"></div><img id="spr-a" class="sprite sa off" alt=""><img id="spr-v" class="sprite sv off" alt=""><img id="spr-b" class="sprite sb off" alt=""><img id="spr-i" class="sprite si off" alt="">
+    <div id="choices"></div><div id="poem" class="hidden"></div>
+    <div id="box"><div id="name"></div><p id="text"></p><span id="next">▼</span></div>
+    <button id="b-menu">Menú</button>
+  </div>
+  <div id="end" class="screen hidden"><h2 id="end-t"></h2><p id="end-d"></p><button id="b-back">Volver al inicio</button></div>
+</div>
+<script src="js/story.js"></script><script src="js/game.js"></script>
+</body></html>
