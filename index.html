@@ -2,20 +2,24 @@
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cosas que no te dije</title><link rel="stylesheet" href="css/style.css"></head>
 <body>
-<div id="game">
+<div id="game"><div id="world">
   <div id="menu" class="screen">
-    <div class="menu-title"><h1>Cosas que<br>no te dije</h1><p>una novela visual sobre decir lo que sientes</p></div>
-    <nav><button id="b-new">Nueva partida</button><button id="b-cont">Continuar</button><button id="b-about">Acerca de</button></nav>
+    <div class="menu-title"><h1><span>Cosas que</span><br><span>no te dije</span></h1><p>una novela visual sobre decir lo que sientes</p></div>
+    <nav><button id="b-new">Nueva partida</button><button id="b-cont">Continuar</button><button id="b-end">Finales <small id="ecount"></small></button><button id="b-set">Ajustes</button><button id="b-about">Acerca de</button></nav>
     <img class="menu-girl" src="images/characters/ariel_nervous.svg" alt=""><img class="menu-boy" src="images/characters/iavier_smile.svg" alt="">
   </div>
   <div id="stage" class="screen hidden">
-    <div id="bg"></div>
-    <div id="hud"></div><img id="spr-a" class="sprite sa off" alt=""><img id="spr-v" class="sprite sv off" alt=""><img id="spr-b" class="sprite sb off" alt=""><img id="spr-f" class="sprite sf off" alt=""><img id="spr-i" class="sprite si off" alt="">
+    <div id="bgw"><div class="bgl on" id="bgA"></div><div class="bgl" id="bgB"></div></div><div id="tint"></div>
+    <div id="chars"><img id="spr-a" class="sprite sa off" alt=""><img id="spr-v" class="sprite sv off" alt=""><img id="spr-b" class="sprite sb off" alt=""><img id="spr-f" class="sprite sf off" alt=""><img id="spr-i" class="sprite si off" alt=""></div>
+    <div id="hud"></div>
     <div id="choices"></div><div id="poem" class="hidden"></div>
     <div id="box"><div id="name"></div><p id="text"></p><span id="next">▼</span></div>
-    <button id="b-menu">Menú</button>
+    <div id="tools"><button id="b-auto">Auto</button><button id="b-skip">Skip</button><button id="b-log">Historial</button><button id="b-opt">⚙</button><button id="b-menu">Menú</button></div>
   </div>
-  <div id="end" class="screen hidden"><h2 id="end-t"></h2><p id="end-d"></p><button id="b-back">Volver al inicio</button></div>
+  <div id="end" class="screen hidden"><h2 id="end-t"></h2><p id="end-d"></p><div id="end-s"></div><p id="end-n"></p><div class="row"><button id="b-retry">Jugar otra vez</button><button id="b-back">Volver al inicio</button></div></div>
+</div>
+<canvas id="fx"></canvas><div id="vig"></div><div id="card"></div><div id="fade"></div>
+<div id="modal" class="hidden"><div id="mc"></div></div>
 </div>
 <script src="js/story.js"></script><script src="js/game.js"></script>
 </body></html>
